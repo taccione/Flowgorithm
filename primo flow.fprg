@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="diego"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-24 10:22:29 "/>
+        <attribute name="created" value="ZGllZ287RElHQVJFTkU7MjAyMy0wOS0yNDsiMDk6NTk6NDQgIjsyMzAz"/>
+        <attribute name="edited" value="ZGllZ287RElHQVJFTkU7MjAyMy0wOS0yNDsiMTA6MjI6MjkgIjsxOzIzOTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NumeroStudenti" type="Integer" array="False" size=""/>
+            <declare name="MezziTrasporto" type="Integer" array="False" size=""/>
+            <input variable="quanti studenti compongono la classe?"/>
+            <output expression="NumeroStudenti" newline="True"/>
+            <declare name="mezzo" type="String" array="False" size=""/>
+            <input variable="Qual &#232; il mezzo di trasporto utilizzato dallo studente &quot; + i + &quot;?"/>
+            <output expression="mezzo" newline="True"/>
+            <if expression="MezziTrasporto = mezzo">
+                <then>
+                    <output expression="MezziTrasporto[mezzo] = MezziTrasporto[mezzo] + 1" newline="True"/>
+                </then>
+                <else>
+                    <output expression="MezziTrasporto[mezzo] = 1" newline="True"/>
+                </else>
+            </if>
+            <declare name="percentuale" type="Integer" array="False" size=""/>
+            <input variable="percentuale"/>
+            <output expression="percentuale = (MezziTrasporto[chiave] / NumeroStudenti) * 100" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

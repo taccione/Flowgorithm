@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nicoz"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-15 05:58:05 "/>
+        <attribute name="created" value="bmljb3o7UElDTklDOzIwMjMtMTAtMDE7IjExOjQ0OjU0ICI7MjE2OA=="/>
+        <attribute name="edited" value="bmljb3o7UElDTklDOzIwMjMtMTAtMTU7IjA1OjU4OjA1ICI7MTM7MjMzNg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="bottiglioni" type="Integer" array="False" size=""/>
+            <declare name="litri" type="Real" array="False" size=""/>
+            <declare name="prezzo" type="Integer" array="False" size=""/>
+            <declare name="iva" type="Real" array="False" size=""/>
+            <declare name="costototale" type="Real" array="False" size=""/>
+            <declare name="repeat" type="Integer" array="False" size=""/>
+            <declare name="s" type="Integer" array="False" size=""/>
+            <declare name="sconto" type="Real" array="False" size=""/>
+            <declare name="consegna" type="Real" array="False" size=""/>
+            <output expression="&quot;benvenuto al Vinaio&quot;" newline="True"/>
+            <output expression="&quot;questo &#232; il nostro catalogo&quot; &amp;tochar(13)&amp;&#13;&#10;&quot;1 Barbera 1 &#8364;/L&quot; &amp;tochar(13)&amp;&#13;&#10;&quot;2 Prosecco 2 &#8364;/L&quot; &amp;tochar(13)&amp;&#13;&#10;&quot;3 Merlot 1.5 &#8364;/L&quot; &amp;tochar(13)&amp;&#13;&#10;&quot;4 Lugana 5 &#8364;/L&quot;" newline="True"/>
+            <output expression="&quot;digita il numero di listino del vino che si vuole acquistare&quot;" newline="True"/>
+            <input variable="s"/>
+            <while expression="s&lt;0">
+                <output expression="&quot;inserisci un numero valido&quot;" newline="True"/>
+                <input variable="s"/>
+            </while>
+            <while expression="s&gt;4">
+                <output expression="&quot;inserisci un numero valido&quot;" newline="True"/>
+                <input variable="s"/>
+            </while>
+            <if expression="s&gt;3">
+                <then>
+                    <if expression="s=4">
+                        <then>
+                            <output expression="&quot; digita il numero di  bottiglioni di Lugana (1,5L) che si desidera acquistare&quot;" newline="True"/>
+                            <input variable="bottiglioni"/>
+                            <assign variable="litri" expression="1.5*bottiglioni"/>
+                            <assign variable="prezzo" expression="litri*5"/>
+                            <assign variable="iva" expression="(prezzo*21)/100"/>
+                            <assign variable="costototale" expression="prezzo+iva"/>
+                            <if expression="litri&gt;=15">
+                                <then>
+                                    <output expression="&quot;grazie per aver acquistato pi&#249; di 15L!&quot;" newline="True"/>
+                                    <output expression="&quot; ecco uno sconto per te&quot;" newline="True"/>
+                                    <assign variable="sconto" expression="(costototale*10)/100"/>
+                                    <assign variable="costototale" expression="costototale-sconto"/>
+                                    <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale  &amp;tochar(13)&amp;&#13;&#10;&quot;sconto applicato: &#8364;&quot;&amp;sconto" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale" newline="True"/>
+                                </else>
+                            </if>
+                            <output expression="&quot;digita 0 se vuoi continuare ad acquistare&quot;" newline="True"/>
+                            <input variable="repeat"/>
+                        </then>
+                        <else>
+                            <output expression="&quot; digita il numero di  bottiglioni di Merlot (1,5L) che si desidera acquistare&quot;" newline="True"/>
+                            <input variable="bottiglioni"/>
+                            <assign variable="litri" expression="1.5*bottiglioni"/>
+                            <assign variable="prezzo" expression="litri*1.5"/>
+                            <assign variable="iva" expression="(prezzo*21)/100"/>
+                            <assign variable="costototale" expression="prezzo+iva"/>
+                            <if expression="litri&gt;=15">
+                                <then>
+                                    <output expression="&quot;grazie per aver acquistato pi&#249; di 15L!&quot;" newline="True"/>
+                                    <output expression="&quot; ecco uno sconto per te&quot;" newline="True"/>
+                                    <assign variable="sconto" expression="(costototale*10)/100"/>
+                                    <assign variable="costototale" expression="costototale-sconto"/>
+                                    <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale  &amp;tochar(13)&amp;&#13;&#10;&quot;sconto applicato: &#8364;&quot;&amp;sconto" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale" newline="True"/>
+                                </else>
+                            </if>
+                            <output expression="&quot;digita 0 se vuoi continuare ad acquistare&quot;" newline="True"/>
+                            <input variable="repeat"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="s=2">
+                        <then>
+                            <output expression="&quot; digita il numero di  bottiglioni di  Prosecco (1,5L) che si desidera acquistare&quot;" newline="True"/>
+                            <input variable="bottiglioni"/>
+                            <assign variable="litri" expression="1.5*bottiglioni"/>
+                            <assign variable="prezzo" expression="litri*2"/>
+                            <assign variable="iva" expression="(prezzo*21)/100"/>
+                            <assign variable="costototale" expression="prezzo+iva"/>
+                            <if expression="litri&gt;=15">
+                                <then>
+                                    <output expression="&quot;grazie per aver acquistato pi&#249; di 15L!&quot;" newline="True"/>
+                                    <output expression="&quot; ecco uno sconto per te&quot;" newline="True"/>
+                                    <assign variable="sconto" expression="(costototale*10)/100"/>
+                                    <assign variable="costototale" expression="costototale-sconto"/>
+                                    <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale  &amp;tochar(13)&amp;&#13;&#10;&quot;sconto applicato: &#8364;&quot;&amp;sconto" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale" newline="True"/>
+                                </else>
+                            </if>
+                            <output expression="&quot;digita 0 se vuoi continuare ad acquistare&quot;" newline="True"/>
+                            <input variable="repeat"/>
+                        </then>
+                        <else>
+                            <output expression="&quot; digita il numero di  bottiglioni di Barbera (1,5L) che si desidera acquistare&quot;" newline="True"/>
+                            <input variable="bottiglioni"/>
+                            <assign variable="litri" expression="1.5*bottiglioni"/>
+                            <assign variable="prezzo" expression="litri*1"/>
+                            <assign variable="iva" expression="(litri*21)/100"/>
+                            <assign variable="costototale" expression="prezzo+iva"/>
+                            <if expression="litri&gt;=15">
+                                <then>
+                                    <output expression="&quot;grazie per aver acquistato pi&#249; di 15L!&quot;" newline="True"/>
+                                    <output expression="&quot; ecco uno sconto per te&quot;" newline="True"/>
+                                    <assign variable="sconto" expression="(costototale*10)/100"/>
+                                    <assign variable="costototale" expression="costototale-sconto"/>
+                                    <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale  &amp;tochar(13)&amp;&#13;&#10;&quot;sconto applicato: &#8364;&quot;&amp;sconto" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale" newline="True"/>
+                                </else>
+                            </if>
+                            <output expression="&quot;digita 0 se vuoi continuare ad acquistare&quot;" newline="True"/>
+                            <input variable="repeat"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <while expression="repeat=0">
+                <output expression="&quot;questo &#232; il nostro catalogo&quot; &amp;tochar(13)&amp;&#13;&#10;&quot;1 Barbera 1 &#8364;/L&quot; &amp;tochar(13)&amp;&#13;&#10;&quot;2 Prosecco 2 &#8364;/L&quot; &amp;tochar(13)&amp;&#13;&#10;&quot;3 Merlot 1.5 &#8364;/L&quot; &amp;tochar(13)&amp;&#13;&#10;&quot;4 Lugana 5 &#8364;/L&quot;" newline="True"/>
+                <output expression="&quot;digita il numero di listino del vino che si vuole acquistare&quot;" newline="True"/>
+                <input variable="s"/>
+                <while expression="s&lt;0">
+                    <output expression="&quot;inserisci un numero valido&quot;" newline="True"/>
+                    <input variable="s"/>
+                </while>
+                <while expression="s&gt;4">
+                    <output expression="&quot;inserisci un numero valido&quot;" newline="True"/>
+                    <input variable="s"/>
+                </while>
+                <if expression="s&gt;3">
+                    <then>
+                        <if expression="s=4">
+                            <then>
+                                <output expression="&quot; digita il numero di  bottiglioni di Lugana (1,5L) che si desidera acquistare&quot;" newline="True"/>
+                                <input variable="bottiglioni"/>
+                                <assign variable="litri" expression="1.5*bottiglioni"/>
+                                <assign variable="prezzo" expression="litri*5"/>
+                                <assign variable="iva" expression="(prezzo*21)/100"/>
+                                <assign variable="costototale" expression="prezzo+iva"/>
+                                <if expression="litri&gt;=15">
+                                    <then>
+                                        <output expression="&quot;grazie per aver acquistato pi&#249; di 15L!&quot;" newline="True"/>
+                                        <output expression="&quot; ecco uno sconto per te&quot;" newline="True"/>
+                                        <assign variable="sconto" expression="(costototale*10)/100"/>
+                                        <assign variable="costototale" expression="costototale-sconto"/>
+                                        <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale  &amp;tochar(13)&amp;&#13;&#10;&quot;sconto applicato: &#8364;&quot;&amp;sconto" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale" newline="True"/>
+                                    </else>
+                                </if>
+                                <output expression="&quot;digita 0 se vuoi continuare ad acquistare&quot;" newline="True"/>
+                                <input variable="repeat"/>
+                            </then>
+                            <else>
+                                <output expression="&quot; digita il numero di  bottiglioni di Merlot (1,5L) che si desidera acquistare&quot;" newline="True"/>
+                                <input variable="bottiglioni"/>
+                                <assign variable="litri" expression="1.5*bottiglioni"/>
+                                <assign variable="prezzo" expression="litri*1.5"/>
+                                <assign variable="iva" expression="(prezzo*21)/100"/>
+                                <assign variable="costototale" expression="prezzo+iva"/>
+                                <if expression="litri&gt;=15">
+                                    <then>
+                                        <output expression="&quot;grazie per aver acquistato pi&#249; di 15L!&quot;" newline="True"/>
+                                        <output expression="&quot; ecco uno sconto per te&quot;" newline="True"/>
+                                        <assign variable="sconto" expression="(costototale*10)/100"/>
+                                        <assign variable="costototale" expression="costototale-sconto"/>
+                                        <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale  &amp;tochar(13)&amp;&#13;&#10;&quot;sconto applicato: &#8364;&quot;&amp;sconto" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale" newline="True"/>
+                                    </else>
+                                </if>
+                                <output expression="&quot;digita 0 se vuoi continuare ad acquistare&quot;" newline="True"/>
+                                <input variable="repeat"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="s=2">
+                            <then>
+                                <output expression="&quot; digita il numero di  bottiglioni di  Prosecco (1,5L) che si desidera acquistare&quot;" newline="True"/>
+                                <input variable="bottiglioni"/>
+                                <assign variable="litri" expression="1.5*bottiglioni"/>
+                                <assign variable="prezzo" expression="litri*2"/>
+                                <assign variable="iva" expression="(prezzo*21)/100"/>
+                                <assign variable="costototale" expression="prezzo+iva"/>
+                                <if expression="litri&gt;=15">
+                                    <then>
+                                        <output expression="&quot;grazie per aver acquistato pi&#249; di 15L!&quot;" newline="True"/>
+                                        <output expression="&quot; ecco uno sconto per te&quot;" newline="True"/>
+                                        <assign variable="sconto" expression="(costototale*10)/100"/>
+                                        <assign variable="costototale" expression="costototale-sconto"/>
+                                        <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale  &amp;tochar(13)&amp;&#13;&#10;&quot;sconto applicato: &#8364;&quot;&amp;sconto" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale" newline="True"/>
+                                    </else>
+                                </if>
+                                <output expression="&quot;digita 0 se vuoi continuare ad acquistare&quot;" newline="True"/>
+                                <input variable="repeat"/>
+                            </then>
+                            <else>
+                                <output expression="&quot; digita il numero di  bottiglioni di Barbera (1,5L) che si desidera acquistare&quot;" newline="True"/>
+                                <input variable="bottiglioni"/>
+                                <assign variable="litri" expression="1.5*bottiglioni"/>
+                                <assign variable="prezzo" expression="litri*1"/>
+                                <assign variable="iva" expression="(litri*21)/100"/>
+                                <assign variable="costototale" expression="prezzo+iva"/>
+                                <if expression="litri&gt;=15">
+                                    <then>
+                                        <output expression="&quot;grazie per aver acquistato pi&#249; di 15L!&quot;" newline="True"/>
+                                        <output expression="&quot; ecco uno sconto per te&quot;" newline="True"/>
+                                        <assign variable="sconto" expression="(costototale*10)/100"/>
+                                        <assign variable="costototale" expression="costototale-sconto"/>
+                                        <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale  &amp;tochar(13)&amp;&#13;&#10;&quot;sconto applicato: &#8364;&quot;&amp;sconto" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;bottiglioni acquistati: &quot;&amp;bottiglioni &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita: &#8364;&quot;&amp;prezzo &amp;tochar(13)&amp;&#13;&#10;&quot;iva applicata: &#8364;&quot;&amp;iva &amp;tochar(13)&amp;&#13;&#10;&quot;prezzo di vendita totale comprensivo di iva: &#8364;&quot;&amp;costototale" newline="True"/>
+                                    </else>
+                                </if>
+                                <output expression="&quot;digita 0 se vuoi continuare ad acquistare&quot;" newline="True"/>
+                                <input variable="repeat"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;vuole effettuare la consegna a domicilio(5&#8364;) o il ritiro al negozio?&quot;" newline="True"/>
+            <output expression="&quot;digitare 1 per la consegna a domicilio, 0 per il ritiro in negozio&quot;" newline="True"/>
+            <input variable="consegna"/>
+            <if expression="consegna==1">
+                <then>
+                    <output expression="&quot;la consegna sar&#224; effettuata e le verranno addebitati 5&#8364;&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;la aspettiamo per il ritiro del vino in negozio&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;grazie per aver acquistato dal vinaio!&quot;" newline="True"/>
+            <output expression="&quot;a presto!&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

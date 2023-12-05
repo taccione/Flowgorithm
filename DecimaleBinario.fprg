@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Studente"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-08 11:22:36 "/>
+        <attribute name="created" value="U3R1ZGVudGU7SU5GT1JNQVRJQ0EyMTA7MjAyMy0xMS0wODsiMTA6NTY6MzQgIjsyOTk1"/>
+        <attribute name="edited" value="U3R1ZGVudGU7SU5GT1JNQVRJQ0EyMTA7MjAyMy0xMS0wODsiMTE6MjI6MzYgIjsxOzMwOTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <declare name="resto" type="Integer" array="False" size=""/>
+            <declare name="binario" type="Integer" array="False" size=""/>
+            <declare name="plus" type="Integer" array="False" size=""/>
+            <declare name="potenza" type="Integer" array="False" size=""/>
+            <assign variable="potenza" expression="1"/>
+            <assign variable="binario" expression="0"/>
+            <output expression="&quot;Inserisci un numero&quot;" newline="True"/>
+            <input variable="numero"/>
+            <do expression="numero!=0">
+                <assign variable="resto" expression="numero%2"/>
+                <assign variable="numero" expression="numero/2"/>
+                <assign variable="binario" expression="binario+resto*potenza"/>
+                <assign variable="potenza" expression="potenza*10"/>
+                <output expression="&quot;&quot; &amp;resto" newline="True"/>
+            </do>
+            <output expression="&quot;numero in binario= &quot; &amp;binario" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

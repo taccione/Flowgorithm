@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Studente"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-03 12:36:44 "/>
+        <attribute name="created" value="U3R1ZGVudGU7SU5GT1JNQVRJQ0EyMTg7MjAyMy0xMC0zMTsiMDE6MDI6MTkgIjsyOTky"/>
+        <attribute name="edited" value="U3R1ZGVudGU7SU5GT1JNQVRJQ0EyMTg7MjAyMy0xMC0zMTsiMDE6MTA6NDQgIjsxOzMwOTc="/>
+        <attribute name="edited" value="ZGllZ287RElHQVJFTkU7MjAyMy0xMS0wMzsiMTI6MzY6NDQgIjsxOzIzOTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <declare name="centinaia" type="Integer" array="False" size=""/>
+            <declare name="decine" type="Integer" array="False" size=""/>
+            <declare name="unit&#224;" type="Integer" array="False" size=""/>
+            <output expression="&quot;Scrivi il numero&quot;" newline="True"/>
+            <input variable="numero"/>
+            <assign variable="unit&#224;" expression="numero%10"/>
+            <assign variable="numero" expression="numero/10"/>
+            <assign variable="decine" expression="numero%10"/>
+            <assign variable="numero" expression="numero/10"/>
+            <assign variable="centinaia" expression="numero%10"/>
+            <output expression="&quot;Decine=&quot;&amp;decine&amp;tochar(13)&amp;&#13;&#10;&quot;Unit&#224;=&quot;&amp;unit&#224;&amp;tochar(13)&amp;&#13;&#10;&quot;Centinaia=&quot;&amp;centinaia" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
